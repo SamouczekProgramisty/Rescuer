@@ -15,4 +15,25 @@ public class AccidentPlace {
         ACTIVE, ASSIGEND, CLOSED
     }
 
+    public Position getPosition() {
+        return position;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public AccidentStatus getStatus() {
+        return status;
+    }
+
+
+
+
+
+
 }
