@@ -10,6 +10,15 @@ public class AccidentPlace {
     private String description;
     private LocalDate date;
     private AccidentStatus status;
+    private RescueTeamMember rescuer;
+
+    public AccidentPlace(Position position, String description, LocalDate date, AccidentStatus status, RescueTeamMember rescuer) {
+        this.position = position;
+        this.description = description;
+        this.date = date;
+        this.status = status;
+        this.rescuer = rescuer;
+    }
 
     public enum AccidentStatus {
         ACTIVE, ASSIGEND, CLOSED
@@ -31,9 +40,7 @@ public class AccidentPlace {
         return status;
     }
 
-
-
-
-
-
+    public RescueTeamMember getRescuer() {
+        return rescuer;
+    }
 }
