@@ -5,6 +5,21 @@ import java.time.LocalTime;
  * Created by Maciek on 23.03.2016.
  */
 public class Activity {
-    LocalTime begin;
-    LocalTime end;
+    private LocalTime begin;
+    private LocalTime end;
+
+    public Activity (LocalTime begin, LocalTime end) {
+        this.begin = begin;
+        this.end = end;
+    }
+
+    public LocalTime getBegin() {
+        return begin;
+    }
+
+    public LocalTime getEnd() {
+        return end;
+    }
+
+
 }

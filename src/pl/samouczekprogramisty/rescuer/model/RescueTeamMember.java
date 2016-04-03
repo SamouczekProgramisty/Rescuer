@@ -26,11 +26,9 @@ public class RescueTeamMember {
         return position;
     }
 
-
     public LocalTime getLastUpdated() {
         return lastUpdated;
     }
-
 
     public String getName() {
         return name;
