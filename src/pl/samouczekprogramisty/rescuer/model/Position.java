@@ -4,8 +4,8 @@ package pl.samouczekprogramisty.rescuer.model;
  * Created by Maciek on 23.03.2016.
  */
 public class Position {
-    double lat;
-    double lon;
+    private double lat;
+    private double lon;
 
     public Position (double lat, double lon) {
         this.lat = lat;
