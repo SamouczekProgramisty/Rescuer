@@ -14,13 +14,17 @@ public class RescueTeamMember {
     private String phoneNumber;
     private List<Activity> activityLog = new ArrayList<Activity>();
 
+
     public RescueTeamMember(Position position, LocalTime lastUpdated, String name, String surname, String phoneNumber) {
         this.position = position;
         this.lastUpdated = lastUpdated;
         this.name = name;
         this.surname = surname;
         this.phoneNumber = phoneNumber;
+        //this.activityLog = activityLog;
     }
+
+
 
     public Position getPosition() {
         return position;
