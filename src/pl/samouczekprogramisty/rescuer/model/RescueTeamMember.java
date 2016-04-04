@@ -25,7 +25,6 @@ public class RescueTeamMember {
     }
 
 
-
     public Position getPosition() {
         return position;
     }
@@ -50,4 +49,27 @@ public class RescueTeamMember {
         return activityLog;
     }
 
+    public void setPosition(Position position) {
+        this.position = position;
+    }
+
+    public void setLastUpdated(LocalTime lastUpdated) {
+        this.lastUpdated = lastUpdated;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setActivityLog(List<Activity> activityLog) {
+        this.activityLog = activityLog;
+    }
 }

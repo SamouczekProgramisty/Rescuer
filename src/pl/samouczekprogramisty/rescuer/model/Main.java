@@ -8,34 +8,58 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
 
-        Console console = System.console();
+        Scanner console = new Scanner(System.in);
+
         RescueTeamMember rescuer1 = new RescueTeamMember();
         RescueTeamMember rescuer2 = new RescueTeamMember();
 
-        String name = console.readLine("Podaj imie ratownika : ");
-        String surname = console.readLine("Podaj nazwisko ratownika : ");
-        String phoneNumber = console.readLine("Podaj nr telefonu ratownika : ");
-        //Position position = console.readLine("Podaj pozycje ratownika lat, lon ");
-        rescuer1.setLat(keyboard.nextDouble("Podaj pozycje lat ratownika"));
-        rescuer1.setLon(keyboard.nextDouble("Podaj pozycje lat ratownika"));
+        String name = console.nextLine("Podaj imie ratownika : ");
+        rescuer1.setName(name);
+
+        String surname = console.nextLine("Podaj nazwisko ratownika : ");
+        rescuer1.setSurname(surname);
+
+        String phoneNumber = console.nextLine("Podaj nr telefonu ratownika : ");
+        rescuer1.setPhoneNumber(phoneNumber);
+
+        double lat = console.nextDouble("Podaj pozycje lat ratownika");
+
+        double lon = console.nextDouble("Podaj pozycje lon ratownika");
+
+        Position position = new Position(lat, lon);
+        rescuer1.setPosition(position);
 
         LocalTime lastUpdated = LocalTime.now();
+        rescuer1.setLastUpdated(lastUpdated);
 
-        RescueTeamMember rescuer1 = new RescueTeamMember(position, lastUpdated, name, surname, phoneNumber );
+        //RescueTeamMember rescuer1 = new RescueTeamMember(position, lastUpdated, name, surname, phoneNumber );
 
 
         //duplikacja kodu
-        String name = console.readLine("Podaj imie ratownika : ");
-        String surname = console.readLine("Podaj nazwisko ratownika : ");
-        String phoneNumber = console.readLine("Podaj nr telefonu ratownika : ");
-        position = console.readLine("Podaj pozycje ratownika lat, lon ");
-        LocalTime lastUpdated = LocalTime.now();
+        name = console.nextLine("Podaj imie ratownika : ");
+        rescuer2.setName(name);
 
-        RescueTeamMember rescuer2 = new RescueTeamMember(position, lastUpdated, name, surname, phoneNumber );
+        surname = console.nextLine("Podaj nazwisko ratownika : ");
+        rescuer2.setSurname(surname);
+
+        phoneNumber = console.nextLine("Podaj nr telefonu ratownika : ");
+        rescuer2.setPhoneNumber(phoneNumber);
+
+        lat = console.nextDouble("Podaj pozycje lat ratownika");
+
+        lon = console.nextDouble("Podaj pozycje lon ratownika");
+
+        position = new Position(lat, lon);
+        rescuer2.setPosition(position);
+
+        lastUpdated = LocalTime.now();
+        rescuer2.setLastUpdated(lastUpdated);
 
 
-        Position position = console.readLine("Podaj wspolrzedne wypadku : ");
-        String description = console.readLine("Podaj opis wypadku : ");
+
+        // Position
+        Position position = console.nextLine("Podaj wspolrzedne wypadku : ");
+        String description = console.nextLine("Podaj opis wypadku : ");
         LocalDate date = LocalDate.now();
         AccidentPlace.AccidentStatus status = AccidentPlace.AccidentStatus.ACTIVE;
         LocalTime lastUpdated = LocalTime.now();
