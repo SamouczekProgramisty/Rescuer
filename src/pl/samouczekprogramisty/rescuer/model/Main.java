@@ -13,18 +13,23 @@ public class Main {
         RescueTeamMember rescuer1 = new RescueTeamMember();
         RescueTeamMember rescuer2 = new RescueTeamMember();
 
-        String name = console.nextLine("Podaj imie ratownika : ");
+        System.out.println("Podaj imie ratownika: ");
+        String name = console.nextLine();
         rescuer1.setName(name);
 
-        String surname = console.nextLine("Podaj nazwisko ratownika : ");
+        System.out.println("Podaj nazwisko ratownika: ");
+        String surname = console.nextLine();
         rescuer1.setSurname(surname);
 
-        String phoneNumber = console.nextLine("Podaj nr telefonu ratownika : ");
+        System.out.println("Podaj nr telefonu ratownika : ");
+        String phoneNumber = console.nextLine();
         rescuer1.setPhoneNumber(phoneNumber);
 
-        double lat = console.nextDouble("Podaj pozycje lat ratownika");
+        System.out.println("Podaj pozycje lat ratownika");
+        double lat = console.nextDouble();
 
-        double lon = console.nextDouble("Podaj pozycje lon ratownika");
+        System.out.println("Podaj pozycje lon ratownika");
+        double lon = console.nextDouble();
 
         Position position = new Position(lat, lon);
         rescuer1.setPosition(position);
@@ -36,18 +41,23 @@ public class Main {
 
 
         //duplikacja kodu
-        name = console.nextLine("Podaj imie ratownika : ");
+        System.out.println("Podaj imie ratownika: ");
+        name = console.nextLine();
         rescuer2.setName(name);
 
-        surname = console.nextLine("Podaj nazwisko ratownika : ");
+        System.out.println("Podaj nazwisko ratownika: ");
+        surname = console.nextLine();
         rescuer2.setSurname(surname);
 
-        phoneNumber = console.nextLine("Podaj nr telefonu ratownika : ");
+        System.out.println("Podaj nr telefonu ratownika : ");
+        phoneNumber = console.nextLine();
         rescuer2.setPhoneNumber(phoneNumber);
 
-        lat = console.nextDouble("Podaj pozycje lat ratownika");
+        System.out.println("Podaj pozycje lat ratownika");
+        lat = console.nextDouble();
 
-        lon = console.nextDouble("Podaj pozycje lon ratownika");
+        System.out.println("Podaj pozycje lon ratownika");
+        lon = console.nextDouble();
 
         position = new Position(lat, lon);
         rescuer2.setPosition(position);
@@ -58,13 +68,13 @@ public class Main {
 
 
         // Position
-        Position position = console.nextLine("Podaj wspolrzedne wypadku : ");
-        String description = console.nextLine("Podaj opis wypadku : ");
-        LocalDate date = LocalDate.now();
-        AccidentPlace.AccidentStatus status = AccidentPlace.AccidentStatus.ACTIVE;
-        LocalTime lastUpdated = LocalTime.now();
+        //position = console.nextLine("Podaj wspolrzedne wypadku : ");
+        //String description = console.nextLine("Podaj opis wypadku : ");
+        //LocalDate date = LocalDate.now();
+        //AccidentPlace.AccidentStatus status = AccidentPlace.AccidentStatus.ACTIVE;
+        //LocalTime lastUpdated = LocalTime.now();
 
-        AccidentPlace accidentPlace = new AccidentPlace(position, description, date, status, rescuer1);
+        //AccidentPlace accidentPlace = new AccidentPlace(position, description, date, status, rescuer1);
 
 
 

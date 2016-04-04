@@ -23,6 +23,9 @@ public class RescueTeamMember {
         this.phoneNumber = phoneNumber;
         //this.activityLog = activityLog;
     }
+    public RescueTeamMember() {
+
+    }
 
 
     public Position getPosition() {
