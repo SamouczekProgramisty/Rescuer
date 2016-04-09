@@ -22,10 +22,10 @@ public class Main {
         //position = console.nextLine("Podaj wspolrzedne wypadku : ");
         //String description = console.nextLine("Podaj opis wypadku : ");
         //LocalDate date = LocalDate.now();
-        //AccidentPlace.AccidentStatus status = AccidentPlace.AccidentStatus.ACTIVE;
+        //Accident.AccidentStatus status = Accident.AccidentStatus.ACTIVE;
         //LocalTime lastUpdated = LocalTime.now();
 
-        //AccidentPlace accidentPlace = new AccidentPlace(position, description, date, status, rescuer1);
+        //Accident accidentPlace = new Accident(position, description, date, status, rescuer1);
 
 
 

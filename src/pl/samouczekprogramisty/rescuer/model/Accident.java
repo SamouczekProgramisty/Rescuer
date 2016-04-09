@@ -5,14 +5,14 @@ import java.time.LocalDate;
 /**
  * Created by Maciek on 30.03.2016.
  */
-public class AccidentPlace {
+public class Accident {
     private Position position;
     private String description;
     private LocalDate date;
     private AccidentStatus status;
     private RescueTeamMember rescuer;
 
-    public AccidentPlace(Position position, String description, LocalDate date, AccidentStatus status, RescueTeamMember rescuer) {
+    public Accident(Position position, String description, LocalDate date, AccidentStatus status, RescueTeamMember rescuer) {
         this.position = position;
         this.description = description;
         this.date = date;
