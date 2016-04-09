@@ -32,7 +32,6 @@ public class RescueTeamMember {
 
     }
 
-
     public Position getPosition() {
         return position;
     }

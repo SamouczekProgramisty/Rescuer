@@ -1,6 +1,8 @@
 package pl.samouczekprogramisty.rescuer.model;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.Scanner;
 
 /**
  * Created by Maciek on 30.03.2016.
@@ -20,8 +22,8 @@ public class Accident {
         this.rescuer = rescuer;
     }
 
-    public enum AccidentStatus {
-        ACTIVE, ASSIGEND, CLOSED
+    public Accident {
+
     }
 
     public Position getPosition() {
@@ -36,11 +38,38 @@ public class Accident {
         return date;
     }
 
-    public AccidentStatus getStatus() {
-        return status;
-    }
-
     public RescueTeamMember getRescuer() {
         return rescuer;
+    }
+
+
+    public void AssignRescueTeamMember(RescueTeamMember rescuer) {
+        this.rescuer = rescuer;
+    }
+
+    public void enterAccidentDetails() {
+        Scanner console = new Scanner(System.in);
+
+        System.out.println("Podaj pozycje lat wypadku");
+        double lat = console.nextDouble();
+        this.description
+
+        System.out.println("Podaj pozycje lon wypadku");
+        double lon = console.nextDouble();
+
+        Position position = new Position(lat, lon);
+        this.position = position;
+
+
+        System.out.println("Podaj opis wypadku: ");
+        String description = console.nextLine();
+        this.description = description;
+
+        LocalTime date = LocalTime.now();
+        this.date = date;
+
+        this.status = AccidentStatus.ACTIVE;
+
+
     }
 }

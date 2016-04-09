@@ -8,27 +8,14 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
 
-
         RescueTeamMember rescuer1 = new RescueTeamMember();
         RescueTeamMember rescuer2 = new RescueTeamMember();
+        Accident accident = new Accident();
 
         rescuer1.enterDetails();
         rescuer2.enterDetails();
 
-
-
-
-        // Position
-        //position = console.nextLine("Podaj wspolrzedne wypadku : ");
-        //String description = console.nextLine("Podaj opis wypadku : ");
-        //LocalDate date = LocalDate.now();
-        //Accident.AccidentStatus status = Accident.AccidentStatus.ACTIVE;
-        //LocalTime lastUpdated = LocalTime.now();
-
-        //Accident accidentPlace = new Accident(position, description, date, status, rescuer1);
-
-
-
-
+        accident.enterAccidentDetails();
+        
     }
 }
