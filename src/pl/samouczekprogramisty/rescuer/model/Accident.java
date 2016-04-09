@@ -10,11 +10,11 @@ import java.util.Scanner;
 public class Accident {
     private Position position;
     private String description;
-    private LocalDate date;
+    private LocalTime date;
     private AccidentStatus status;
     private RescueTeamMember rescuer;
 
-    public Accident(Position position, String description, LocalDate date, AccidentStatus status, RescueTeamMember rescuer) {
+    public Accident(Position position, String description, LocalTime date, AccidentStatus status, RescueTeamMember rescuer) {
         this.position = position;
         this.description = description;
         this.date = date;
@@ -22,7 +22,7 @@ public class Accident {
         this.rescuer = rescuer;
     }
 
-    public Accident {
+    public Accident() {
 
     }
 
@@ -34,7 +34,7 @@ public class Accident {
         return description;
     }
 
-    public LocalDate getDate() {
+    public LocalTime getDate() {
         return date;
     }
 
@@ -52,7 +52,6 @@ public class Accident {
 
         System.out.println("Podaj pozycje lat wypadku");
         double lat = console.nextDouble();
-        this.description
 
         System.out.println("Podaj pozycje lon wypadku");
         double lon = console.nextDouble();

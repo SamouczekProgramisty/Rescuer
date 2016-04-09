@@ -18,5 +18,7 @@ public class Main {
         accident.enterAccidentDetails();
         accident.AssignRescueTeamMember(rescuer1);
 
+        System.out.println(accident);
+
     }
 }
