@@ -1,7 +1,12 @@
 package pl.samouczekprogramisty.rescuer.model;
 import java.time.LocalTime;
 import java.util.List;
+import java.util.*;
 import java.util.ArrayList;
+import java.io.Console;
+import java.time.LocalDate;
+
+
 
 /**
  * Created by Maciek on 23.03.2016.
@@ -74,5 +79,32 @@ public class RescueTeamMember {
 
     public void setActivityLog(List<Activity> activityLog) {
         this.activityLog = activityLog;
+    }
+
+    public void enterDetails() {
+        Scanner console = new Scanner(System.in);
+        System.out.println("Podaj imie ratownika1: ");
+        String name = console.nextLine();
+        this.setName(name);
+
+        System.out.println("Podaj nazwisko ratownika: ");
+        String surname = console.nextLine();
+        this.setSurname(surname);
+
+        System.out.println("Podaj nr telefonu ratownika : ");
+        String phoneNumber = console.nextLine();
+        this.setPhoneNumber(phoneNumber);
+
+        System.out.println("Podaj pozycje lat ratownika");
+        double lat = console.nextDouble();
+
+        System.out.println("Podaj pozycje lon ratownika");
+        double lon = console.nextDouble();
+
+        Position position = new Position(lat, lon);
+        this.setPosition(position);
+
+        LocalTime lastUpdated = LocalTime.now();
+        this.setLastUpdated(lastUpdated);
     }
 }
