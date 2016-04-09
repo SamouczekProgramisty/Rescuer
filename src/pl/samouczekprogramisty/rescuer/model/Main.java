@@ -16,6 +16,7 @@ public class Main {
         rescuer2.enterDetails();
 
         accident.enterAccidentDetails();
-        
+        accident.AssignRescueTeamMember(rescuer1);
+
     }
 }
