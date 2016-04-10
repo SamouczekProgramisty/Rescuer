@@ -28,6 +28,7 @@ public class RescueTeamMember {
         this.phoneNumber = phoneNumber;
         //this.activityLog = activityLog;
     }
+
     public RescueTeamMember() {
 
     }
@@ -78,6 +79,10 @@ public class RescueTeamMember {
 
     public void setActivityLog(List<Activity> activityLog) {
         this.activityLog = activityLog;
+    }
+
+    public void addActivity (Activity activity) {
+        this.activityLog.add(activity);
     }
 
     public void enterDetails() {

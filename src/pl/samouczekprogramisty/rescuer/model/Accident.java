@@ -42,7 +42,6 @@ public class Accident {
         return rescuer;
     }
 
-
     public void AssignRescueTeamMember(RescueTeamMember rescuer) {
         this.rescuer = rescuer;
     }
