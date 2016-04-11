@@ -5,6 +5,7 @@ import java.util.*;
 import java.util.ArrayList;
 import java.io.Console;
 import java.time.LocalDate;
+import java.util.Date;
 
 
 
@@ -13,14 +14,15 @@ import java.time.LocalDate;
  */
 public class RescueTeamMember {
     private Position position;
-    private LocalTime lastUpdated;
+    //private LocalTime lastUpdated;
+    private Date lastUpdated;
     private String name;
     private String surname;
     private String phoneNumber;
     private List<Activity> activityLog = new ArrayList<Activity>();
 
 
-    public RescueTeamMember(Position position, LocalTime lastUpdated, String name, String surname, String phoneNumber) {
+    public RescueTeamMember(Position position, Date lastUpdated, String name, String surname, String phoneNumber) {
         this.position = position;
         this.lastUpdated = lastUpdated;
         this.name = name;
@@ -37,7 +39,7 @@ public class RescueTeamMember {
         return position;
     }
 
-    public LocalTime getLastUpdated() {
+    public Date getLastUpdated() {
         return lastUpdated;
     }
 
@@ -61,7 +63,7 @@ public class RescueTeamMember {
         this.position = position;
     }
 
-    public void setLastUpdated(LocalTime lastUpdated) {
+    public void setLastUpdated(Date lastUpdated) {
         this.lastUpdated = lastUpdated;
     }
 
@@ -81,7 +83,7 @@ public class RescueTeamMember {
         this.activityLog = activityLog;
     }
 
-    public void addActivity (Activity activity) {
+    public void addActivity(Activity activity) {
         this.activityLog.add(activity);
     }
 
@@ -108,7 +110,8 @@ public class RescueTeamMember {
         Position position = new Position(lat, lon);
         this.setPosition(position);
 
-        LocalTime lastUpdated = LocalTime.now();
-        this.setLastUpdated(lastUpdated);
+
+        Date date = new Date();
+        this.setLastUpdated(date);
     }
 }

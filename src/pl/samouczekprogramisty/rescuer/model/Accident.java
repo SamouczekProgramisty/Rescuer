@@ -3,6 +3,9 @@ package pl.samouczekprogramisty.rescuer.model;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Scanner;
+import java.util.Date;
+
+
 
 /**
  * Created by Maciek on 30.03.2016.
@@ -34,7 +37,7 @@ public class Accident {
         return description;
     }
 
-    public LocalTime getDate() {
+    public Date getDate() {
         return date;
     }
 
