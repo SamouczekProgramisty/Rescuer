@@ -60,7 +60,13 @@ public class RescueTeamMember {
     }
 
     public void setPosition(Position position) {
-        this.position = position;
+        try {
+            this.position = position;
+        }
+        catch (IllegalArgumentException) {
+            System.out.println("Musisz podac liczbe");
+
+        }
     }
 
     public void setLastUpdated(Date lastUpdated) {
@@ -102,10 +108,23 @@ public class RescueTeamMember {
         this.setPhoneNumber(phoneNumber);
 
         System.out.println("Podaj pozycje lat ratownika");
-        double lat = console.nextDouble();
+        try {
+            double lat = console.nextDouble();
+        }
+        catch (IllegalArgumentException) {
+            System.out.println("Musisz podac liczbe");
+
+        }
+       
 
         System.out.println("Podaj pozycje lon ratownika");
-        double lon = console.nextDouble();
+        try {
+            double lon = console.nextDouble();
+        }
+        catch (IllegalArgumentException) {
+            System.out.println("Musisz podac liczbe");
+
+        }
 
         Position position = new Position(lat, lon);
         this.setPosition(position);
