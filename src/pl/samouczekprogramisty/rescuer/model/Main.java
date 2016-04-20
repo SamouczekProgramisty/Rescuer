@@ -10,15 +10,18 @@ public class Main {
 
         RescueTeamMember rescuer1 = new RescueTeamMember();
         RescueTeamMember rescuer2 = new RescueTeamMember();
-        Accident accident = new Accident();
+        //Accident accident = new Accident();
 
-        rescuer1.enterDetails();
+        Accident accident = Accident.instantiate(System.in);
+
+        //rescuer1.enterDetails();
         rescuer2.enterDetails();
 
         accident.enterAccidentDetails();
-        accident.AssignRescueTeamMember(rescuer1);
+        accident.assignRescueTeamMember(rescuer1);
 
         System.out.println(accident.getRescuer().getName());
+        System.out.println(accident.getDescription());
 
     }
 }

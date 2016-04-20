@@ -110,7 +110,6 @@ public class RescueTeamMember {
         Position position = new Position(lat, lon);
         this.setPosition(position);
 
-
         Date date = new Date();
         this.setLastUpdated(date);
     }

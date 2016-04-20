@@ -1,9 +1,11 @@
 package pl.samouczekprogramisty.rescuer.model;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Scanner;
 import java.util.Date;
+import java.io.*;
 
 
 
@@ -13,19 +15,31 @@ import java.util.Date;
 public class Accident {
     private Position position;
     private String description;
-    private LocalTime date;
+    private LocalDateTime date;
     private AccidentStatus status;
     private RescueTeamMember rescuer;
 
-    public Accident(Position position, String description, LocalTime date, AccidentStatus status, RescueTeamMember rescuer) {
-        this.position = position;
-        this.description = description;
-        this.date = date;
-        this.status = status;
-        this.rescuer = rescuer;
-    }
 
     public Accident() {
+
+    }
+
+    public Accident(String description) {
+        this.description = description;
+    }
+
+    public static Accident instantiate(InputStream in) {
+        if (in == System.in) {
+            Scanner console = new Scanner(System.in);
+            System.out.println("podaj opis wypadkuu");
+            String description = console.nextLine();
+            return new Accident(description);
+        }
+        else
+        {
+            System.out.println("aaaa");
+            return new Accident("dupa");
+        }
 
     }
 
@@ -37,7 +51,7 @@ public class Accident {
         return description;
     }
 
-    public Date getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
@@ -45,12 +59,12 @@ public class Accident {
         return rescuer;
     }
 
-    public void AssignRescueTeamMember(RescueTeamMember rescuer) {
+    public void assignRescueTeamMember(RescueTeamMember rescuer) {
         this.rescuer = rescuer;
     }
 
     public void enterAccidentDetails() {
-        Scanner console = new Scanner(System.in);
+        /*Scanner console = new Scanner(System.in);
 
         System.out.println("Podaj pozycje lat wypadku");
         double lat = console.nextDouble();
@@ -66,10 +80,10 @@ public class Accident {
         String description = console.nextLine();
         this.description = description;
 
-        LocalTime date = LocalTime.now();
+        LocalDateTime date = LocalDateTime.now();
         this.date = date;
 
-        this.status = AccidentStatus.ACTIVE;
+        this.status = AccidentStatus.ACTIVE;*/
 
 
     }
