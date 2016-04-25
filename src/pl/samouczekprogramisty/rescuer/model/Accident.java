@@ -30,7 +30,7 @@ public class Accident {
 
     public static Accident instantiate(InputStream in) {
         if (in == System.in) {
-            Scanner console = new Scanner(System.in);
+            Scanner console = new Scanner(in);
             System.out.println("podaj opis wypadkuu");
             String description = console.nextLine();
             return new Accident(description);

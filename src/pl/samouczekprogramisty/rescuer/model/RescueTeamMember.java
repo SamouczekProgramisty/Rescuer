@@ -1,10 +1,7 @@
 package pl.samouczekprogramisty.rescuer.model;
-import java.time.LocalTime;
 import java.util.List;
 import java.util.*;
 import java.util.ArrayList;
-import java.io.Console;
-import java.time.LocalDate;
 import java.util.Date;
 
 
@@ -60,13 +57,9 @@ public class RescueTeamMember {
     }
 
     public void setPosition(Position position) {
-        try {
-            this.position = position;
-        }
-        catch (IllegalArgumentException) {
-            System.out.println("Musisz podac liczbe");
 
-        }
+            this.position = position;
+
     }
 
     public void setLastUpdated(Date lastUpdated) {
@@ -108,28 +101,26 @@ public class RescueTeamMember {
         this.setPhoneNumber(phoneNumber);
 
         System.out.println("Podaj pozycje lat ratownika");
-        try {
-            double lat = console.nextDouble();
-        }
-        catch (IllegalArgumentException) {
-            System.out.println("Musisz podac liczbe");
 
-        }
-       
+        double lat = getPos(console);
 
         System.out.println("Podaj pozycje lon ratownika");
-        try {
-            double lon = console.nextDouble();
-        }
-        catch (IllegalArgumentException) {
-            System.out.println("Musisz podac liczbe");
-
-        }
+        double lon = getPos(console);
 
         Position position = new Position(lat, lon);
         this.setPosition(position);
 
         Date date = new Date();
         this.setLastUpdated(date);
+    }
+
+    private double getPos(Scanner console) {
+        try {
+            return console.nextDouble();
+        }
+        catch (InputMismatchException e) {
+            System.out.println("Musisz podac liczbe");
+        }
+        return 0;
     }
 }
