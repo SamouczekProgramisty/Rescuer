@@ -3,6 +3,7 @@ import java.util.List;
 import java.util.*;
 import java.util.ArrayList;
 import java.util.Date;
+import java.io.*;
 
 
 
@@ -26,6 +27,10 @@ public class RescueTeamMember {
         this.surname = surname;
         this.phoneNumber = phoneNumber;
         //this.activityLog = activityLog;
+    }
+
+    public  RescueTeamMember(String name){{
+        this.name = name;
     }
 
     public RescueTeamMember() {
@@ -86,33 +91,38 @@ public class RescueTeamMember {
         this.activityLog.add(activity);
     }
 
-    public void enterDetails() {
-        Scanner console = new Scanner(System.in);
-        System.out.println("Podaj imie ratownika1: ");
-        String name = console.nextLine();
-        this.setName(name);
 
-        System.out.println("Podaj nazwisko ratownika: ");
-        String surname = console.nextLine();
-        this.setSurname(surname);
+    public static RescueTeamMember instantiate(InputStream in) {
+        if (in == System.in) {
+            Scanner console = new Scanner(in);
 
-        System.out.println("Podaj nr telefonu ratownika : ");
-        String phoneNumber = console.nextLine();
-        this.setPhoneNumber(phoneNumber);
+            System.out.println("Podaj imie ratownika1: ");
+            String name = console.nextLine();
 
-        System.out.println("Podaj pozycje lat ratownika");
+            System.out.println("Podaj nazwisko ratownika: ");
+            String surname = console.nextLine();
 
-        double lat = getPos(console);
+            System.out.println("Podaj nr telefonu ratownika : ");
+            String phoneNumber = console.nextLine();
 
-        System.out.println("Podaj pozycje lon ratownika");
-        double lon = getPos(console);
+            System.out.println("Podaj pozycje lat ratownika");
+            double lat = getPos(console);
 
-        Position position = new Position(lat, lon);
-        this.setPosition(position);
+            System.out.println("Podaj pozycje lon ratownika");
+            double lon = getPos(console);
 
-        Date date = new Date();
-        this.setLastUpdated(date);
+            Position position = new Position(lat, lon);
+
+            Date date = new Date();
+
+            return new RescueTeamMember(name, surname, phoneNumber, position, date);
+        }
+        else {
+            System.out.println("blad");
+            return new RescueTeamMember("blad");
+        }
     }
+
 
     private double getPos(Scanner console) {
         try {

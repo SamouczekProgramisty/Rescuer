@@ -24,6 +24,13 @@ public class Accident {
 
     }
 
+    public Accident(String description, Position position, LocalDateTime date, AccidentStatus status) {
+        this.description = description;
+        this.position = position;
+        this.date = date;
+        this.status = status;
+    }
+
     public Accident(String description) {
         this.description = description;
     }
@@ -31,14 +38,26 @@ public class Accident {
     public static Accident instantiate(InputStream in) {
         if (in == System.in) {
             Scanner console = new Scanner(in);
-            System.out.println("podaj opis wypadkuu");
+
+            System.out.println("Podaj opis wypadkuu");
             String description = console.nextLine();
-            return new Accident(description);
+
+            System.out.println("Podaj pozycje lat wypadku");
+            double lat = console.nextDouble();
+
+            System.out.println("Podaj pozycje lon wypadku");
+            double lon = console.nextDouble();
+
+            Position position = new Position(lat, lon);
+
+            LocalDateTime date = LocalDateTime.now();
+
+            return new Accident(description, position, date, AccidentStatus.ACTIVE);
         }
         else
         {
             System.out.println("aaaa");
-            return new Accident("dupa");
+            return new Accident("blad");
         }
 
     }
@@ -63,27 +82,6 @@ public class Accident {
         this.rescuer = rescuer;
     }
 
-    public void enterAccidentDetails() {
-        /*Scanner console = new Scanner(System.in);
-
-        System.out.println("Podaj pozycje lat wypadku");
-        double lat = console.nextDouble();
-
-        System.out.println("Podaj pozycje lon wypadku");
-        double lon = console.nextDouble();
-
-        Position position = new Position(lat, lon);
-        this.position = position;
-
-
-        System.out.println("Podaj opis wypadku: ");
-        String description = console.nextLine();
-        this.description = description;
-
-        LocalDateTime date = LocalDateTime.now();
-        this.date = date;
-
-        this.status = AccidentStatus.ACTIVE;*/
 
 
     }
