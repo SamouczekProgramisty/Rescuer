@@ -13,9 +13,9 @@ import java.io.*;
  * Created by Maciek on 30.03.2016.
  */
 public class Accident {
-    private Position position;
-    private String description;
-    private LocalDateTime date;
+    final private Position position;
+    final private String description;
+    final private LocalDateTime date;
     private AccidentStatus status;
     private RescueTeamMember rescuer;
 
@@ -84,5 +84,5 @@ public class Accident {
 
 
 
-    }
+
 }

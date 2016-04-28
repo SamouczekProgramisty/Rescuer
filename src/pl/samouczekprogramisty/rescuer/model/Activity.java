@@ -7,8 +7,6 @@ import java.util.Date;
  */
 public class Activity {
 
-    /*private LocalTime begin;
-    private LocalTime end;*/
     private Date begin;
     private Date end;
 

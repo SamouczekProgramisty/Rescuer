@@ -1,4 +1,5 @@
 package pl.samouczekprogramisty.rescuer.model;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.*;
 import java.util.ArrayList;
@@ -12,15 +13,14 @@ import java.io.*;
  */
 public class RescueTeamMember {
     private Position position;
-    //private LocalTime lastUpdated;
-    private Date lastUpdated;
-    private String name;
-    private String surname;
+    private LocalDateTime lastUpdated;
+    final private String name;
+    final private String surname;
     private String phoneNumber;
     private List<Activity> activityLog = new ArrayList<Activity>();
 
 
-    public RescueTeamMember(Position position, Date lastUpdated, String name, String surname, String phoneNumber) {
+    public RescueTeamMember(Position position, LocalDateTime lastUpdated, String name, String surname, String phoneNumber) {
         this.position = position;
         this.lastUpdated = lastUpdated;
         this.name = name;
@@ -29,7 +29,7 @@ public class RescueTeamMember {
         //this.activityLog = activityLog;
     }
 
-    public  RescueTeamMember(String name){{
+    public  RescueTeamMember(String name){
         this.name = name;
     }
 
@@ -41,7 +41,7 @@ public class RescueTeamMember {
         return position;
     }
 
-    public Date getLastUpdated() {
+    public LocalDateTime getLastUpdated() {
         return lastUpdated;
     }
 
@@ -67,7 +67,7 @@ public class RescueTeamMember {
 
     }
 
-    public void setLastUpdated(Date lastUpdated) {
+    public void setLastUpdated(LocalDateTime lastUpdated) {
         this.lastUpdated = lastUpdated;
     }
 
@@ -113,9 +113,9 @@ public class RescueTeamMember {
 
             Position position = new Position(lat, lon);
 
-            Date date = new Date();
+            LocalDateTime date = LocalDateTime.now();
 
-            return new RescueTeamMember(name, surname, phoneNumber, position, date);
+            return new RescueTeamMember(position, date,  name, surname, phoneNumber);
         }
         else {
             System.out.println("blad");
@@ -124,7 +124,7 @@ public class RescueTeamMember {
     }
 
 
-    private double getPos(Scanner console) {
+    private static double getPos(Scanner console) {
         try {
             return console.nextDouble();
         }
