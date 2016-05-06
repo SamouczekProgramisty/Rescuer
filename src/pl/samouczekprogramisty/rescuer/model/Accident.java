@@ -13,7 +13,7 @@ import java.io.*;
  * Created by Maciek on 30.03.2016.
  */
 public class Accident {
-    final private Position position;
+    private Position position;
     final private String description;
     final private LocalDateTime date;
     private AccidentStatus status;

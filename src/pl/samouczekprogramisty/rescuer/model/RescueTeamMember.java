@@ -71,14 +71,6 @@ public class RescueTeamMember {
         this.lastUpdated = lastUpdated;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
@@ -91,7 +83,7 @@ public class RescueTeamMember {
         this.activityLog.add(activity);
     }
 
-
+    // wyrzucuc do osobnej klasy
     public static RescueTeamMember instantiate(InputStream in) {
         if (in == System.in) {
             Scanner console = new Scanner(in);
